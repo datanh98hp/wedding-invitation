@@ -1,4 +1,3 @@
-
 <!-- Home section -->
 <section class="hero-section d-flex" id="section_home">
     <div class="hero-container container d-flex flex-column justify-content-end">
@@ -18,7 +17,7 @@
                     Bootstrap v5.1.3 Layout
                 </p>
 
-                <a href="#section_2" class="custom-link custom-btn btn mt-4">Discover More</a>
+                <a href="#section_infor_couple" class="custom-link custom-btn btn mt-4">Discover More</a>
             </div>
 
             <div class="col-lg-3 col-12 save-the-date-wrap mt-auto ms-lg-auto">

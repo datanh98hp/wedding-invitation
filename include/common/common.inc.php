@@ -12,6 +12,6 @@ $GLOBALS['connect'] = $connect;
 // 
 $GLOBALS['wife_name'] = $wife_name;
 $GLOBALS['husband_name'] = $husband_name;
+$GLOBALS['actual_link'] = $actual_link;
 
-$GLOBALS['actual_link'] = $actual_link;;
 ?>

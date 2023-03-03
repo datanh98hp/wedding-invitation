@@ -2,14 +2,34 @@
 <!-- <?php include './include/common/common.inc.php'; ?> -->
 <?php include './lib/func.lib.php'; ?>
 <?php
-$own = '0869029018';
+$own = $_GET['own'];
 // $init_name1 = "Nguyễn Bích Ngọc";
 // $init_name2 = "Nguyễn Văn Bình";
 $params = [];
-$params =  getParamFromUrl($GLOBALS['actual_link']."?own=".$own);
+$params =  getParamsFromUrl($GLOBALS['actual_link'] . "?own=" . $own);
 // echo $params['own'];
+// var_dump(checkOwnExist('0869029018'));
 // exit();
 ?>
+<script>
+    function getCurrentURL() {
+        return window.location.href
+    }
+
+    function getParamFromUrl(url, variable) {
+        let urlInit = url;
+        const urlParams = new URL(urlInit).searchParams;
+        //get param
+        const value = urlParams.get(variable); // 1
+        return value;
+    }
+
+    function checkParamExistUrl(url, paramCheck) {
+        const urlParams = new URLSearchParams(url);
+        if (urlParams.has(paramCheck)) return true;
+    }
+
+</script>
 
 <body>
     <section class="preloader">
