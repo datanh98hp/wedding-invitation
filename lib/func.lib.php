@@ -1,6 +1,12 @@
 <?php
 
    include "./include/common/common.inc.php";
+    function getCurrentUrl(){
+        $protocol = ((!emty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+        $CurPageURL = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];  
+
+        return $CurPageURL;
+    }
 
     //define all function
     function getParamsFromUrl($url){

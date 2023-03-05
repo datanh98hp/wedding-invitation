@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2023 at 04:36 PM
+-- Generation Time: Mar 05, 2023 at 05:15 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -36,6 +36,13 @@ CREATE TABLE `contact_refer_form` (
   `time_stamp` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='table for form contact information';
 
+--
+-- Dumping data for table `contact_refer_form`
+--
+
+INSERT INTO `contact_refer_form` (`id`, `email`, `name`, `phone`, `message`, `time_stamp`) VALUES
+(1, 'datanh98hp@gmail.com', 'datanh', '0869029018', 'Test form contact data', '2023-03-03 14:32:01');
+
 -- --------------------------------------------------------
 
 --
@@ -58,7 +65,7 @@ CREATE TABLE `couple_infor` (
 --
 
 INSERT INTO `couple_infor` (`id`, `husband_name`, `husband_info`, `wife_name`, `wife_info`, `social_link_husband`, `social_link_wife`, `own`) VALUES
-(1, 'A', 'sfsdg sdf sdf fdbgrnhkn jyj', 'maryin', 'haer ery rty sdfgn jlu6yjrt', NULL, NULL, NULL),
+(1, 'A', 'sfsdg sdf sdf fdbgrnhkn jyj', 'maryin', 'haer ery rty sdfgn jlu6yjrt', NULL, NULL, '0869029018'),
 (2, 'John', 'sf oweru 90wur f90 jf', 'Maeyin', 'sà wre gẻg', 'ă rwer wegfwef gêgfe', 'gertw trưefrw', NULL);
 
 -- --------------------------------------------------------
@@ -105,7 +112,8 @@ CREATE TABLE `img_gallery` (
   `name` varchar(50) NOT NULL,
   `category` varchar(10) DEFAULT NULL,
   `url` int(255) DEFAULT NULL,
-  `id_couple` int(11) NOT NULL
+  `id_couple` int(11) NOT NULL,
+  `rank` int(11) NOT NULL DEFAULT 0 COMMENT 'sort by rank to top'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -121,8 +129,17 @@ CREATE TABLE `infor_provider_services` (
   `email` varchar(50) NOT NULL,
   `phone` varchar(15) NOT NULL,
   `social_links` varchar(255) NOT NULL,
-  `despcription` text DEFAULT NULL
+  `despcription` text DEFAULT NULL,
+  `status` varchar(20) NOT NULL,
+  `rank` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `infor_provider_services`
+--
+
+INSERT INTO `infor_provider_services` (`id`, `name`, `address`, `email`, `phone`, `social_links`, `despcription`, `status`, `rank`) VALUES
+(1, 'Trung tâm hỗ trợ', 'Quốc Tuấn - An Lão - Hải Phòng', 'dat198hp@gmail.com', '0869029018', 'https://www.facebook.com/dovandat43/,', 'test desciption', 'active', 1);
 
 -- --------------------------------------------------------
 
@@ -197,7 +214,7 @@ ALTER TABLE `time_line_event`
 -- AUTO_INCREMENT for table `contact_refer_form`
 --
 ALTER TABLE `contact_refer_form`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `couple_infor`
@@ -227,7 +244,7 @@ ALTER TABLE `img_gallery`
 -- AUTO_INCREMENT for table `infor_provider_services`
 --
 ALTER TABLE `infor_provider_services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `time_line_event`

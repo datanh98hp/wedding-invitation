@@ -2,14 +2,26 @@
 <!-- <?php include './include/common/common.inc.php'; ?> -->
 <?php include './lib/func.lib.php'; ?>
 <?php
-$own = $_GET['own'];
-// $init_name1 = "Nguyễn Bích Ngọc";
-// $init_name2 = "Nguyễn Văn Bình";
-$params = [];
-$params =  getParamsFromUrl($GLOBALS['actual_link'] . "?own=" . $own);
-// echo $params['own'];
-// var_dump(checkOwnExist('0869029018'));
-// exit();
+
+    // get infor couple
+    $own = '';
+    if (array_key_exists('own', $_GET) == false || $own = null) {
+        // init data
+        $couple=[
+        "husband_name"=> 'Hushband Name',
+        "wife_name"=> 'wife_name',
+        "husband_info"=> 'husband_info',
+        "wife_info"=> "wife_info"
+        ];
+        $husband_name = 'Hushband Name';
+        $wife_name = 'Wife Name';
+    } else {
+        $own = $_GET['own'];
+        $couple = getInfoByOwn($own);
+        $husband_name = $couple['husband_name'];
+        $wife_name = $couple['wife_name'];
+    }
+// 
 ?>
 <script>
     function getCurrentURL() {

@@ -24,12 +24,12 @@
             <div class="col-lg-3 col-12">
                 <div class="about-info-wrap d-flex flex-column">
                     <div class="about-info-title d-flex align-items-center my-3">
-                        <h4>Jolie</h4>
+                        <h4><?php echo $couple['wife_name']; ?></h4>
 
-                        <span class="about-tag ms-2">The Bride</span>
+                        <span class="about-tag ms-2">Cô dâu</span>
                     </div>
 
-                    <p>Sarah is amazing. When I first met her I knew she was amazing and every passing day reminds me of just how amazing she is!</p>
+                    <p><?php echo $couple['wife_info']; ?></p>
 
                     <div class="social-icon-wrap mt-auto">
                         <ul class="social-icon ms-auto">
@@ -54,14 +54,14 @@
             <div class="col-lg-3 col-12">
                 <div class="about-info-wrap d-flex flex-column">
                     <div class="about-info-title d-flex align-items-center my-3">
-                        <h4>Bratt</h4>
+                        <h4><?php echo $couple['wife_name']; ?></h4>
 
-                        <span class="about-tag ms-2">The Groom</span>
+                        <span class="about-tag ms-2">Chú rể</span>
                     </div>
 
-                    <p>I really love her incredibly unique blend of talents.</p>
+                    <!-- <p>I really love her incredibly unique blend of talents.</p> -->
 
-                    <p>She's a talented artist, always excited about a genuinely loving person.</p>
+                    <p><?php echo $couple['wife_info']; ?></p>
 
                     <div class="social-icon-wrap mt-auto">
                         <ul class="social-icon ms-auto">
